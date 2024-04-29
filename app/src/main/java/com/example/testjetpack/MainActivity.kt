@@ -1,5 +1,6 @@
 package com.example.testjetpack
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -62,6 +63,11 @@ class MainActivity : ComponentActivity() {
                         .background(color.value)
                         .weight(1f)
                         .fillMaxSize()
+                        .clickable {
+                            val intent = Intent(this@MainActivity,SecondActivity::class.java)
+                            startActivity(intent)
+                            finishAffinity()
+                        }
                 ) {
 
                 }
